@@ -1,19 +1,23 @@
 import React from 'react';
-import NewsArticles from './components/Articles';
-import NavBar from './components/NavBar';
-import SearchBar from './components/SearchBar';
+import { Router, Route, ReactLocation, Outlet } from 'react-location';
 
 import { SearchProvider } from './globalContext/searchContext';
+import LandingPage from './pages/LandingPage';
 
+const location = new ReactLocation();
+const routes: Route[] = [
+  {
+    path: '/',
+    element: <LandingPage />,
+  },
+];
 function App() {
   return (
-    <div className="App">
+    <Router location={location} routes={routes}>
       <SearchProvider>
-        <NavBar />
-        <SearchBar />
-        <NewsArticles />
+        <Outlet />
       </SearchProvider>
-    </div>
+    </Router>
   );
 }
 

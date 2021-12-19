@@ -5,6 +5,13 @@ export const Container = styled.div`
   margin: 40px auto;
 `;
 
+export const ArticleContainer = styled.div`
+  a {
+    text-decoration: none;
+    color: #4f4f4f;
+  }
+`;
+
 export const Label = styled.p`
   font-weight: bold;
   font-size: 16px;
@@ -22,7 +29,12 @@ export const Article = styled.div`
   outline: none;
   background-color: #fffdf4;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin: auto;
+  display: flex;
+  align-items: center;
+
+  h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;

@@ -1,11 +1,19 @@
 import React, { createContext, useCallback, useState, useMemo } from 'react';
 
+export interface IArticle {
+  _id: string;
+  headline: { main: string };
+  lead_paragraph: string;
+  web_url: string;
+  pub_date: string;
+}
+
 interface SearchContextData {
   query: string;
   setQuery: (query: string) => void;
   handleChangeSearchTerm(event: React.ChangeEvent<HTMLInputElement>): void;
-  currentArticles: string[];
-  setCurrentArticles: (articles: string[]) => void;
+  currentArticles: IArticle[];
+  setCurrentArticles: (articles: IArticle[]) => void;
 }
 
 interface SearchProviderProps {
@@ -19,7 +27,7 @@ export const SearchContext = createContext<SearchContextData>(
 export function SearchProvider(props: SearchProviderProps) {
   const { children } = props;
   const [query, setQuery] = useState<string>('');
-  const [currentArticles, setCurrentArticles] = useState<string[]>([]);
+  const [currentArticles, setCurrentArticles] = useState<IArticle[]>([]);
 
   const handleChangeSearchTerm = useCallback(input => {
     const { value } = input.target;
