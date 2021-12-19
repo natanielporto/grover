@@ -26,7 +26,7 @@ export default function SearchBar(): JSX.Element {
 
     populateArticles();
     setIsLoading(false);
-  }, []);
+  }, [query, setCurrentArticles]);
 
   return (
     <Container>
