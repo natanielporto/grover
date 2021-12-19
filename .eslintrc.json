@@ -26,6 +26,8 @@
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": ["error"],
     "react/no-unescaped-entities": 0,
     "react/function-component-definition": [
       2,

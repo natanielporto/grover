@@ -1,13 +1,20 @@
 import React from 'react';
-import './App.css';
-import Navbar from './components/navbar';
+import NewsArticle from './components/Article';
+import NavBar from './components/NavBar';
+import SearchBar from './components/SearchBar';
+import { SearchProvider } from './globalContext/searchContext';
 
-const App = function () {
+const articles: string[] = ['1', '2', '3', '4', '5'];
+function App() {
   return (
     <div className="App">
-      <Navbar />
+      <SearchProvider>
+        <NavBar />
+        <SearchBar />
+        {/* <NewsArticle articles={articles} /> */}
+      </SearchProvider>
     </div>
   );
-};
+}
 
 export default App;
