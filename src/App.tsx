@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/article" element={<ArticlePage />} />
+          <Route path="/article/:slug" element={<ArticlePage />} />
         </Routes>
       </BrowserRouter>
     </SearchProvider>

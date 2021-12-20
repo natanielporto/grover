@@ -9,6 +9,14 @@ export default function NewsArticles(): JSX.Element {
   const searchContext = useContext(SearchContext);
   const { currentArticles, setArticle } = searchContext;
 
+  const slugify = (text: string): string => {
+    return text
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^\w-]+/g, '');
+  };
+
   const renderArticles = (element: IArticle): JSX.Element => {
     const {
       _id,
@@ -32,7 +40,7 @@ export default function NewsArticles(): JSX.Element {
         }
         key={_id}
       >
-        <Link to="/article">
+        <Link to={`/article/${slugify(element.headline.main)}`}>
           <Article key={element._id}>
             <h3>{element.headline.main}</h3>
           </Article>
