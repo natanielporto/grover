@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: 1024px;
-  margin: 40px auto;
+  margin: 24px auto;
 `;
 
 export const Label = styled.p`
@@ -19,12 +19,12 @@ export const SearchContainer = styled.div`
     position: absolute;
     width: 32px;
     top: 14px;
-    right: 0;
+    right: 14px;
   }
 `;
 
 export const SearchInput = styled.input`
-  width: 100%;
+  width: 98%;
   height: 40px;
   border: 2px solid #ddd;
   border-radius: 4px;

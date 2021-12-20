@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-location';
 import { IArticle, SearchContext } from '../../globalContext/searchContext';
+import Pagination from '../Pagination';
 
 import { Container, ArticleContainer, Label, Article } from './styles';
 
@@ -11,14 +11,12 @@ export default function NewsArticles(): JSX.Element {
   const renderArticles = (element: IArticle): JSX.Element => {
     return (
       <ArticleContainer>
-        <Link to={element.web_url}>
-          <Article key={element._id}>
-            <h3>{element.headline.main}</h3>
-            {/* <p>{element.pub_date}</p>
+        <Article key={element._id}>
+          <h3>{element.headline.main}</h3>
+          {/* <p>{element.pub_date}</p>
         <p>{element.lead_pagraph}</p>
       <a href={element.web_url}>Read the full article</a> */}
-          </Article>
-        </Link>
+        </Article>
       </ArticleContainer>
     );
   };
@@ -31,6 +29,7 @@ export default function NewsArticles(): JSX.Element {
       ) : (
         <div>Loading...</div>
       )}
+      <Pagination />
     </Container>
   );
 }

@@ -6,6 +6,7 @@ export interface IArticle {
   lead_paragraph: string;
   web_url: string;
   pub_date: string;
+  meta: { hits: number };
 }
 
 interface SearchContextData {
@@ -14,6 +15,8 @@ interface SearchContextData {
   handleChangeSearchTerm(event: React.ChangeEvent<HTMLInputElement>): void;
   currentArticles: IArticle[];
   setCurrentArticles: (articles: IArticle[]) => void;
+  page: number;
+  setPage: (page: number) => void;
 }
 
 interface SearchProviderProps {
@@ -28,7 +31,9 @@ export function SearchProvider(props: SearchProviderProps) {
   const { children } = props;
   const [query, setQuery] = useState<string>('');
   const [currentArticles, setCurrentArticles] = useState<IArticle[]>([]);
+  const [page, setPage] = useState<number>(1);
 
+  console.log('page:', page);
   const handleChangeSearchTerm = useCallback(input => {
     const { value } = input.target;
     setQuery(value as string);
@@ -41,6 +46,8 @@ export function SearchProvider(props: SearchProviderProps) {
       handleChangeSearchTerm,
       setCurrentArticles,
       currentArticles,
+      page,
+      setPage,
     }),
     [
       query,
@@ -48,6 +55,8 @@ export function SearchProvider(props: SearchProviderProps) {
       handleChangeSearchTerm,
       currentArticles,
       setCurrentArticles,
+      page,
+      setPage,
     ],
   );
 

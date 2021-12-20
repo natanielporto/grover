@@ -12,16 +12,18 @@ interface IResponseArticle {
 
 export default function SearchBar(): JSX.Element {
   const searchContext = useContext(SearchContext);
-  const { handleChangeSearchTerm, query, setCurrentArticles } = searchContext;
+  const { handleChangeSearchTerm, query, setCurrentArticles, page } =
+    searchContext;
 
   useEffect(() => {
     const populateArticles = async () => {
       try {
         const response = await fetch(
-          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${process.env.REACT_APP_KEY}`,
+          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${process.env.REACT_APP_KEY}&page=${page}`,
         );
 
         const fetchedArticles = (await response.json()) as IResponseArticle;
+        console.log('1', fetchedArticles);
         setCurrentArticles(fetchedArticles.response.docs);
       } catch (error) {
         console.log(error);
@@ -29,8 +31,7 @@ export default function SearchBar(): JSX.Element {
     };
 
     populateArticles();
-  }, [query, setCurrentArticles]);
-
+  }, [query, setCurrentArticles, page]);
   return (
     <Container>
       <Label>Type search query term in here:</Label>

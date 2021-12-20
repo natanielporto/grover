@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: 1024px;
-  margin: 24px auto;
+  margin: 40px auto;
 `;
 
 export const ArticleContainer = styled.div`
@@ -20,6 +20,7 @@ export const Label = styled.p`
 `;
 
 export const Article = styled.div`
+  width: 100%;
   height: 40px;
   border: 2px solid #ddd;
   border-radius: 4px;
