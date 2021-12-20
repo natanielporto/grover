@@ -23,7 +23,6 @@ export default function SearchBar(): JSX.Element {
         );
 
         const fetchedArticles = (await response.json()) as IResponseArticle;
-        console.log('1', fetchedArticles);
         setCurrentArticles(fetchedArticles.response.docs);
       } catch (error) {
         console.log(error);

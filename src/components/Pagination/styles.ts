@@ -8,13 +8,6 @@ export const Container = styled.div`
   align-items: center;
   margin-top: 20px;
 
-  a {
-    text-decoration: none;
-    border: 1px solid #eee;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-
   button {
     border: 1px solid #eee;
     padding: 5px 10px;

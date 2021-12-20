@@ -17,6 +17,8 @@ interface SearchContextData {
   setCurrentArticles: (articles: IArticle[]) => void;
   page: number;
   setPage: (page: number) => void;
+  article: IArticle;
+  setArticle: (article: IArticle) => void;
 }
 
 interface SearchProviderProps {
@@ -29,11 +31,11 @@ export const SearchContext = createContext<SearchContextData>(
 
 export function SearchProvider(props: SearchProviderProps) {
   const { children } = props;
+  const [page, setPage] = useState<number>(1);
   const [query, setQuery] = useState<string>('');
   const [currentArticles, setCurrentArticles] = useState<IArticle[]>([]);
-  const [page, setPage] = useState<number>(1);
+  const [article, setArticle] = useState<IArticle>({} as IArticle);
 
-  console.log('page:', page);
   const handleChangeSearchTerm = useCallback(input => {
     const { value } = input.target;
     setQuery(value as string);
@@ -48,6 +50,8 @@ export function SearchProvider(props: SearchProviderProps) {
       currentArticles,
       page,
       setPage,
+      article,
+      setArticle,
     }),
     [
       query,
@@ -57,6 +61,8 @@ export function SearchProvider(props: SearchProviderProps) {
       setCurrentArticles,
       page,
       setPage,
+      article,
+      setArticle,
     ],
   );
 
