@@ -55,7 +55,7 @@ export default function NewsArticles(): JSX.Element {
       {currentArticles && currentArticles.length > 0 ? (
         <div>{currentArticles.map(el => renderArticles(el))}</div>
       ) : (
-        <div>Loading...</div>
+        <div id="loading">Loading...</div>
       )}
       <Pagination />
     </Container>
