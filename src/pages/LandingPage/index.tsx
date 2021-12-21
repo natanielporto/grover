@@ -1,13 +1,13 @@
 import React from 'react';
 import NewsArticles from '../../components/Articles';
-import NavBar from '../../components/NavBar';
-import SearchBar from '../../components/SearchBar';
+import Navbar from '../../components/Navbar';
+import Searchbar from '../../components/Searchbar';
 
 function LandingPage() {
   return (
     <>
-      <NavBar />
-      <SearchBar />
+      <Navbar />
+      <Searchbar />
       <NewsArticles />
     </>
   );

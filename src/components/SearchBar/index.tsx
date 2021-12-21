@@ -10,7 +10,7 @@ interface IResponseArticle {
   };
 }
 
-export default function SearchBar(): JSX.Element {
+export default function Searchbar(): JSX.Element {
   const searchContext = useContext(SearchContext);
   const { handleChangeSearchTerm, query, setCurrentArticles, page } =
     searchContext;
