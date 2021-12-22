@@ -41,7 +41,7 @@ export default function NewsArticles(): JSX.Element {
         key={_id}
       >
         <Link to={`/article/${slugify(element.headline.main)}`}>
-          <Article key={element._id}>
+          <Article>
             <h3>{element.headline.main}</h3>
           </Article>
         </Link>
