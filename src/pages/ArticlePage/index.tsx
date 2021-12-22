@@ -3,19 +3,11 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import { SearchContext } from '../../globalContext/searchContext';
 
-import { Container, Title, Date, ArticleCopy } from './styles';
+import { Container, Title, CurrentDate, ArticleCopy } from './styles';
 
 export default function ArticlePage(): JSX.Element {
   const searchContext = useContext(SearchContext);
   const { article } = searchContext;
-
-  const {
-    _id,
-    headline: { main },
-    lead_paragraph,
-    web_url,
-    pub_date,
-  } = article;
 
   const dateRearrange = (date: string) =>
     date.split('T')[0].split('-').reverse().join('.');
@@ -25,16 +17,16 @@ export default function ArticlePage(): JSX.Element {
     window.open(event.currentTarget.href, '_blank');
   };
 
-  return (
+  const articleToShow = (
     <>
       <Navbar />
       {article ? (
-        <Container key={_id}>
+        <Container key={article._id}>
           <Link to="/">&lt; Go to results page</Link>
-          <Title>{main}</Title>
-          <Date>{dateRearrange(pub_date)}</Date>
-          <ArticleCopy>{lead_paragraph}</ArticleCopy>
-          <a href={web_url} onClick={handleOutboundLink}>
+          <Title>{article.headline.main}</Title>
+          <CurrentDate>{dateRearrange(article.pub_date)}</CurrentDate>
+          <ArticleCopy>{article.lead_paragraph}</ArticleCopy>
+          <a href={article.web_url} onClick={handleOutboundLink}>
             Read the full article
           </a>
         </Container>
@@ -43,4 +35,6 @@ export default function ArticlePage(): JSX.Element {
       )}
     </>
   );
+
+  return articleToShow;
 }

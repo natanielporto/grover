@@ -15,7 +15,7 @@ export const Title = styled.h2`
   margin: 24px 0;
 `;
 
-export const Date = styled.p`
+export const CurrentDate = styled.p`
   font-style: italic;
   margin-bottom: 24px;
 `;
