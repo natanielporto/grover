@@ -10,13 +10,13 @@ This was created with:
 - ESLint - AirBnB style guide
 - Prettier
 - Yarn
-- Jest
+- Jest (unit testing)
 ```
 In order to recreate the project, clone it and run "npm i" or "yarn" in the root of the project.
 
-If you don't have Yarn installed, just go here to download and install the latest version: https://yarnpkg.com/getting-started/install
+If you don't have Yarn installed, just click the following link to download and install the latest version: https://yarnpkg.com/getting-started/install
 
-After that, to start the project just run ```yarn start``` or  ```npm run start``` depending on your package manager choice.
+After that, to start the project just run ```yarn start``` or the equivalent for npm.
 
 ## Objective of the project
 This is an app to fetch the New York Times articles and present them to the reader.
@@ -24,5 +24,12 @@ This is an app to fetch the New York Times articles and present them to the read
  - type the keyword(s) of your liking in the search bar and it will automaticaly fetch it from the API, no need to press enter or clicking anything;
  - to refresh the search, simply delete your entry and search for another keyword'
  - in order to further investigate the articles presented to you, click on the one that cought your attention. You will be redirected to a page containing pertinent informations about it, like: title, date of publication and the NYT url to read it on their website;
- 
- 
+
+### Heads up
+1 - I tried to do it as close as I could with the screen provided;
+2 - I was about to create my own approach (the next and previous buttons show that). I have mailed the person that invited me but I had no replies, so I stuck to the original proposal;
+3 - I did as many tests as I could. Sorry if it's not 100% but I have lots of things on my plate since it's the end of the year and end of sprints, projects, classes, college, etc.
+Nevertheless, I believe that they show what I know and what I'm capable of doing;
+4 - It could use some refactoring in order not to repeat the code - mock information in tests, for instance - but then I would not be able to finish and present to you in time because of the same reasons previously explained. 
+
+If you want me to re-do it with a different layout perspective, just let me know. I really want to be a part of the team. 
